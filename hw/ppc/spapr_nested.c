@@ -631,9 +631,6 @@ static void copy_logical_pvr(void *a, void *b, bool set)
     }
 
     pvr_logical = be32_to_cpu(buf[0]);
-    /* don't change the major version */
-    assert((pvr_logical & CPU_POWERPC_POWER_SERVER_MASK) ==
-           (*pvr_logical_ptr & CPU_POWERPC_POWER_SERVER_MASK));
 
     *pvr_logical_ptr = pvr_logical;
 }
